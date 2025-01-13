@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucin untuk Pacar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff7eb3, #ff758c);
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .moving-text {
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            animation: moveText 10s linear infinite;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            background-color: #ff477e;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff2d63;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        audio {
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Halaman Utama</a>
+        <a href="page2.html">Pesan Motivasi</a>
+        <a href="page3.html">Lagu Romantis</a>
+    </nav>
+    <h1>Hai Sayangku! ❤️</h1>
+    <div class="moving-text">kamu adalah alasan aku tersenyum setiap hari. Semangat ya! Aku selalu mendukungmu.</div>
+    <button onclick="showMotivation()">Klik untuk Semangat!</button>
+
+    <audio id="song" controls>
+        <source src="lagu_bucin.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung audio tag.
+    </audio>
+
+    <script>
+        function showMotivation() {
+            const phrases = [
+                'Kamu itu bintangku di langit yang gelap. 🌟',
+                'Jangan menyerah, aku di sini untukmu! 💪',
+                'Aku bangga banget sama kamu, sayang. ❤️',
+                'Senyummu adalah sumber energiku. 😊'
+            ];
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            alert(phrases[randomIndex]);
+
+            // Play the song when the button is clicked
+            const song = document.getElementById('song');
+            song.play();
+        }
+    </script>
+</body>
+</html>
